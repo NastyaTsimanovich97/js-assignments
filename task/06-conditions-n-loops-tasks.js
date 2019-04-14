@@ -30,6 +30,18 @@
  *
  */
 function getFizzBuzz(num) {
+    if(num%3==0 && num%5!=0){
+        return 'Fizz';
+    }
+    else if(num%3!=0 && num%5==0){
+        return 'Buzz';
+    }
+    else if(num%3==0 && num%5==0){
+        return 'FizzBuzz';
+    }
+    else {
+        return num;
+    }
     throw new Error('Not implemented');
 }
 
@@ -46,6 +58,7 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
+    return (n != 1) ? n * getFactorial(n - 1) : 1;
     throw new Error('Not implemented');
 }
 
@@ -63,6 +76,11 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
+    let sum=0;
+    for(let i=n1;i<=n2;i++){
+        sum+=i;
+    }
+    return sum;
     throw new Error('Not implemented');
 }
 
@@ -82,6 +100,14 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
+    let res=[a,b,c];
+    let sort=res.sort((a,b)=>a-b);
+    if((sort[0]+sort[1])>sort[2]){
+        return true;
+    }
+    else{
+        return false;
+    }
     throw new Error('Not implemented');
 }
 
@@ -150,6 +176,12 @@ function doRectanglesOverlap(rect1, rect2) {
  *   
  */
 function isInsideCircle(circle, point) {
+    // if(Math.sqrt((point.x-circle.x)*(point.x-circle.x)+(point.y-circle.y)*(point.y-circle.y))<(circle.radius)){
+    //     return true;
+    // }
+    // else {
+    //     return false;
+    // }
     throw new Error('Not implemented');
 }
 
@@ -209,6 +241,8 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
+    let arr=str.split('').reverse().join('');
+    return arr;
     throw new Error('Not implemented');
 }
 
@@ -251,6 +285,7 @@ function reverseInteger(num) {
  *   4916123456789012 => false
  */
 function isCreditCardNumber(ccn) {
+   
     throw new Error('Not implemented');
 }
 
